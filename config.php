@@ -1,10 +1,15 @@
 <?php 
 
- 
+/* mysql://ba406683c58e0e:9100f338@us-cdbr-east-02.cleardb.com/heroku_bd26c1de3d217c7?reconnect=true*/
         $servername ="us-cdbr-east-02.cleardb.com";
-        $username ="bf05ca120624fb";
-        $password="181ac24a";
-        $dbconnect="heroku_4e956cc525a6de9";
+        $username ="ba406683c58e0e";
+        $password="9100f338";
+        $dbconnect="heroku_bd26c1de3d217c7";
+
+     /* $servername = "localhost";
+      $username = 'root';
+      $password = '';
+      $dbconnect='form';*/
 
       $connect = mysqli_connect($servername,$username,$password,$dbconnect);
     
@@ -13,4 +18,5 @@
     echo "Failed to connect : (" . $connect->connect_errno . ") " . $connect->connect_error;
      }
      
+
 ?>

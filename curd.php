@@ -12,9 +12,11 @@
       
       $fname = $_POST['fname'];
       $lname=$_POST['lname'];
+      $date = date('Y-m-d H:i:s');
       
+  
        /* inserting data in database */
-      $query= "insert into user (fname,lname) values ('$fname','$lname')";
+      $query= "insert into user (fname,lname,time_log) values ('$fname','$lname','$date')";
       
        $result = mysqli_query($connect,$query);
       
@@ -48,6 +50,7 @@
                <input type="text" id="fname" name="fname" class="form-control" required>
              <label>LastName</label>
                <input type="text" id="lname" name="lname" class="form-control" required>
+               
                <br>
                <button class="btn btn-success" name="submit_btn">Submit</button>
             </div>
@@ -64,6 +67,7 @@
            <th>Id</th>
            <th>FirstName</th>
            <th>LastName</th>
+            <th>LogTime</th>
         
            </tr>
            <?php
@@ -74,9 +78,13 @@
            while($row = mysqli_fetch_assoc($result))
     
           {?>
-             <td><?php echo $row['id'];?></td>
+             <tr>
+           <td><?php echo $row['id'];?>  </td>
              <td><?php echo $row['fname'];?></td>
              <td><?php echo $row['lname'];?></td>
+             <td><?php echo $row['time_log'];?></td>
+           
+           </tr>
            
           <?php }?>
          
