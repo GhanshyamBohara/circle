@@ -76,7 +76,7 @@
           {?>
              <td><?php echo $row['id'];?></td>
              <td><?php echo $row['fname'];?></td>
-             <td><?php echo $row['fname'];?></td>
+             <td><?php echo $row['lname'];?></td>
            
           <?php }?>
          
