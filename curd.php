@@ -1,16 +1,12 @@
 <?php 
+
+  require_once('config.php');
+
   if(isset($_POST['submit_btn']) && $_GET['action']=='sample_form')
       
   {
-       /* inline database connection */
-      
-     $connect = mysqli_connect('localhost','root','','form');
-    
-      if ($connect->connect_errno) 
-      {
-    echo "Failed to connect : (" . $connect->connect_errno . ") " . $connect->connect_error;
-     }
-      
+     
+   
       
       /* getting form value from post method */
       
@@ -68,10 +64,10 @@
            <th>Id</th>
            <th>FirstName</th>
            <th>LastName</th>
-            <th>log time</th>
+        
            </tr>
            <?php
-            $connect = mysqli_connect('localhost','root','','form');
+           
              $query = "select *from user";
              $result = mysqli_query($connect,$query);
              
@@ -81,7 +77,7 @@
              <td><?php echo $row['id'];?></td>
              <td><?php echo $row['fname'];?></td>
              <td><?php echo $row['fname'];?></td>
-            <td><?php echo $row['time_log'];?></td>
+           
           <?php }?>
          
         </table>
